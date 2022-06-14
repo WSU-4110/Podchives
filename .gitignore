@@ -1,0 +1,10 @@
+/vendor/
+composer.lock
+index.php
+
+# ApiGen
+api/
+
+# OS generated files
+.DS_Store
+.idea
