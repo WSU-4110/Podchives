@@ -28,11 +28,17 @@ padding-right: .5em;
 }
 
 h4 {
-font-family: "Georgia";
+font-family: "Helvetica, sans-serif";
+margin-left: 4em;
+margin-right: 4em;
+font-size: 2em;
+text-align: center;
+justify-content: center;
+text-color: white;
 }
 
 p {
- font-family: "Georgia";
+ font-family: "Helvetica, sans-serif";
  font-size: 1em;
  margin-left: 0.5em;
  padding-left: 4.5em;
@@ -90,6 +96,17 @@ height: 350px;
 border-radius: 25%;
 }
 
+.border {
+ border-color: white;  
+background-color: green;
+  border-width: .25em;  
+  border-style: solid; 
+ margin-left: 4em;
+text-align: center;
+width: 500px;
+justify-content: center;
+}
+
 .gifs {
 padding-left: 3em;
 float: left;
@@ -104,17 +121,20 @@ display: flex;
 flex-wrap: wrap;
 }
 
+
 nav ul {
-margin: 10;
-padding: 0;
+margin: 30;
+padding-left: 50;
 list-style-type: none;
 display: flex;
  justify-content: right;
 }
 
 nav ul li a {
- padding: .5em 2em; 
- margin: 1em;
+ padding: 0.5em; 
+ margin: 0.5em;
+ padding-top: 1em;
+ color: #071251; 
 }
 
 
@@ -143,34 +163,29 @@ padding-right: 0.5em;
   justify-content: center;
 }
 
-.border {
-border-top-style: inset; 
-border-right-style: inset; 
-border-bottom-style: inset; 
-border-left-style: inset; 
-}
+
 
 figure {
-text-align: center;
+justify-content: center;
+
 }
 
-#ssmenu {
-letter-spacing: 4px;
+nav {
+padding-left: 200px;
 }
 
-#vegan{
-background-color: #a2e0bf;
+.navigation {
+font-size: 1.5em;
 }
 
 .description {
 text-align: center;
-color: #F4A460;
-background: #6b1125; 
-width: 1200px;
-height: 100px;
-padding: 20px;
-border: 5px solid #F4A460; 
-margin: 20px;
+color: white;
+background: #071251; 
+width: 100px;
+height: 25px;
+padding: 10px;
+margin: 10px;
 justify-content: center;
 }
 
@@ -181,4 +196,27 @@ justify-content: center;
 .column {
   flex: 20%;
   padding: 5px;
+}
+
+div#cardfan {
+	width: 300px;
+	height: 201px;
+	margin: 0 auto;
+}
+div#cardfan img {
+	width: 300px;
+	height: 201px;
+	border: 18px solid #ffe;
+	box-shadow: 6px 6px 3px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	transform-origin: center 800px;
+	transition: all .6s linear;
+}
+
+div#cardfan:hover img:first-child {
+	transform: rotate(12deg);
+}
+
+div#cardfan:hover img:last-child {
+	transform: rotate(-12deg);
 }
