@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="utf-8">
+    <title>Podchives - Home</title>
+    <link th:href="@{/ssheet.css}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div class="row">
+    <h1><img class="mainlogo" th:src="@{/podchives-logos/homelogo.png}" alt="logo"></h1>
+
+    <header>
+        <div class="row">
+            <h1><img class="mainlogo" th:src="@{/podchives-logos/homelogo.png}" alt="logo"></h1>
+            <nav>
+                <ul>
+                    <li><a th:href="@{/login}" target="_blank">TRENDING</a></li>
+                    <li><a th:href="@{/login}" target="_blank">LISTS</a></li>
+                    <li><a th:href="@{/login}" target="_blank">BLOG</a></li>
+                    <li><a th:href="@{/login}" target="_blank">DISCOVER</a></li>
+                    <li><a th:href="@{/login}" target="_blank"><img class ="icons" th:src="@{/icons/magnifying-glass.png}" alt="logo"></a></li>
+                    <li><a th:href="@{/login}" target="_blank"><img class ="icons" th:src="@{/icons/icon.png}" alt="logo"></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</div>
+
+<h3></h3>
+
+<section>
+<h1><strong class="header">WELCOME TO PODCHIVES</strong></h1>
+<br>
+
+<figure>
+<div id="cardfan">
+	<img src="/covers/obama.png" alt="Obama">
+	<img src="/covers/songexploder-logo.png" alt="Song Exploder">
+	<img src="/covers/serial.png">
+</div>
+</figure>
+
+<br><br><br>
+
+
+
+<h4 style="color: white;"> Discover new podcasts. 
+  Save it now, listen later.
+ Keep your favorites in one place.</h4>
+
+
+<a href="archives.html" target="_blank"><h4 style="border:#071251; border-width:5px; border-style:solid; width: 300px; margin-left: 600px; background-color: #071251; color: white; font-family: Helvetica, sans-serif;">Let's Get Started</h4> </a>
+
+
+</section>
+<br><br>
+<h3></h3>
+<br>
+
+
+<h1><strong class="header">POPULAR THIS WEEK</strong></h1>
+
+
+<br>
+
+
+<figure>
+  <div class="row">
+  <div class="column">
+    <img class="covers" src="covers/emergency.png" alt="Emergency Intercom">
+  </div>
+  <div class="column">
+    <img class="covers" src="covers/reconomy.png" alt="REconomy">
+  </div>
+  <div class="column">
+    <img class="covers" src="covers/coffeebreakfr.png" alt="Coffee Break French">
+  </div>
+<div class="column">
+    <img class="covers" src="covers/anythinggoes.png" alt="Anything Goes">
+  </div>
+</div>
+</figure>
+<br>
+</body>
+</html>
