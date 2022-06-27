@@ -1,0 +1,15 @@
+package com.company;
+
+public class Podcast {
+
+    private static Podcast instance = new Podcast();
+    private Podcast(){}
+
+    public static Podcast getInstance(){
+        return instance;
+    }
+
+    public void showMessage(){
+        System.out.println("Favorite");
+    }
+}
