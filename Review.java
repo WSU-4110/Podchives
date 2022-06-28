@@ -10,7 +10,7 @@ public class Review {
              choice = input.nextLine();
           if(choice == R || choice == r){
 
-         readReview();
+         readReview(Review);
 }
 else if(choice == W || choice == w){
 
@@ -19,9 +19,9 @@ else if(choice == W || choice == w){
         
     }
     
-    public static void readReview()
+    public static void readReview(String r)
     {
-      
+      return Review;
         
 
     }
