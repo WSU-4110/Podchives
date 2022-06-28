@@ -9,13 +9,13 @@ public interface Review {
 
     
     public class Read implements Review{
-        public void choice() {
+        public void read() {
       System.out.println(“review");
    }
 
     }
     public class Write implements Review{
-     public void choice() {
+     public void write() {
         System.out.print("Type Here: ");
              choice = input.nextLine();
              }
