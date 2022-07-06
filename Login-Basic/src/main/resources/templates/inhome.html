@@ -1,88 +1,111 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
 <head>
-<meta charset="utf-8">
-    <title>Podchives - Home</title>
-    <link th:href="@{/ssheet.css}" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8">
+  <title>Podchives - Home</title>
+  <link th:href="@{/public/ssheet.css}" rel="stylesheet" type="text/css" />
+  <!--    <link rel="stylesheet" th:href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
 </head>
+
 <body>
 
-<header>
+  <header>
     <div class="row">
-        <h1><img class="mainlogo" th:src="@{/podchives-logos/homelogo.png}" alt="logo"></h1>
-        <nav>
-            <ul>
-                <li><a th:href="@{/login}" target="_blank">TRENDING</a></li>
-                <li><a th:href="@{/login}" target="_blank">LISTS</a></li>
-                <li><a th:href="@{/login}" target="_blank">BLOG</a></li>
-                <li><a th:href="@{/login}" target="_blank">DISCOVER</a></li>
-                <li><a th:href="@{/login}" target="_blank"><img class ="icons" th:src="@{/icons/magnifying-glass.png}" alt="logo"></a></li>
-                <li><a th:href="@{/login}" target="_blank"><img class ="icons" th:src="@{/icons/icon.png}" alt="logo"></a>
-            </ul>
-        </nav>
+      <h1><img class="mainlogo" th:src="@{/public/podchives-logos/homelogo.png}" alt="logo"></h1>
+      <nav>
+        <ul>
+          <li><a th:href="@{/trending}">TRENDING</a></li>
+          <li><a th:href="@{/lists}">LISTS</a></li>
+          <li><a th:href="@{/blog}">BLOG</a></li>
+          <li><a th:href="@{/discover}">DISCOVER</a></li>
+
+          <li><a th:href="@{/login}"><img class="icons" th:src="@{/public/icons/magnifying-glass.png}"
+                alt="logo"></a></li>
+          <li><a th:href="@{/login}"><img class="icons" th:src="@{/public/icons/icon.png}"
+                alt="logo"></a>
+        </ul>
+      </nav>
     </div>
-</header>
-
-<section>
-<h1><strong class="header">FROM MY LISTEN LIST</strong></h1>
-<figure>
-  <div class="row">
-  <div class="column">
-    <img class="covers" th:src="@{/covers/obama.png}" alt="Obama">
-  </div>
-  <div class="column">
-    <img class="covers" th:src="@{/covers/songexploder-logo.png}" alt="Song Exploder">
-  </div>
-  <div class="column">
-    <img class="covers" th:src="@{/covers/serial.png}" alt="Serial">
-  </div>
-<div class="column">
-    <img class="covers" th:src="@{/covers/booksboba.png}" alt="Books and Boba">
-  </div>
-</div>
-</figure>
-<br></br></li>
- 
-
-</section>
-<br><br><br>
+  </header>
 
 
-<h1><strong class="header">POPULAR THIS WEEK</strong></h1>
+  <body>
 
+    <section> <!--sec:authorize="!isAuthenticated()">-->
+        <h1><strong class="header">WELCOME TO PODCHIVES</strong></h1>
+        <figure>
+          <div class="row">
+            <div class="column">
+              <img class="covers" th:src="@{/public/covers/obama.png}" alt="Obama">
+            </div>
+            <div class="column">
+              <img class="covers" th:src="@{/public/covers/songexploder-logo.png}" alt="Song Exploder">
+            </div>
+            <div class="column">
+              <img class="covers" th:src="@{/public/covers/serial.png}" alt="Serial">
+            </div>
+            <div class="column">
+              <img class="covers" th:src="@{/public/covers/booksboba.png}" alt="Books and Boba">
+            </div>
+          </div>
+        </figure>
+        <br>
+    </section>
 
-<br>
+    <section sec:authorize="isAuthenticated()">
+        <h1><strong class="header">FROM MY LISTEN LIST</strong></h1>
+        <figure>
+            <div class="row">
+                <div class="column">
+                    <img class="covers" th:src="@{/public/covers/renegades.jpg}" alt="Renegades">
+                </div>
+                <div class="column">
+                    <img class="covers" th:src="@{/public/covers/happiness-lab.jpg}" alt="The Happiness Lab">
+                </div>
+                <div class="column">
+                    <img class="covers" th:src="@{/public/covers/life-kit.jpg}" alt="Life Kit">
+                </div>
+                <div class="column">
+                    <img class="covers" th:src="@{/public/covers/my-favorite-murder.jpg}" alt="My Favorite Murder">
+                </div>
+            </div>
+        </figure>
+    </section>
 
-<figure>
-  <div class="row">
-  <div class="column">
-    <img class="covers" src="covers/obama.png" alt="Obama">
-  </div>
-  <div class="column">
-    <img class="covers" src="covers/songexploder-logo.png" alt="Song Exploder">
-  </div>
-  <div class="column">
-    <img class="covers" src="covers/serial.png" alt="Serial">
-  </div>
-<div class="column">
-    <img class="covers" src="covers/booksboba.png" alt="Books and Boba">
-  </div>
-</div>
-</figure>
-<br>
+    <br><br><br>
 
-<fieldset>
-    <legend><h2>send us your favorite <strong>podcasts</strong>!</h2></legend>
-    <h3>Suggest your favorite spring recipes for a chance to be featured in the next season!</h3>
-    <p>Submit a podcast <a href="requests.html" target="_blank">here.</a></p>
-    <p>For inquiries, <a href="mailto:hb8003@wayne.edu">contact us!</a></p>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
+    <section>
+        <h1><strong class="header">POPULAR THIS WEEK</strong></h1>
+        <br>
+        <figure>
+          <div class="row">
+            <div class="column">
+              <img class="covers" th:src="@{/public/covers/emergency.png}" alt="Emergency Intercom">
+            </div>
+            <div class="column">
+              <img class="covers" th:src="@{/public/covers/reconomy.png}" alt="REconomy">
+            </div>
+            <div class="column">
+              <img class="covers" th:src="@{/public/covers/coffeebreakfr.png}" alt="Coffee Break French">
+            </div>
+            <div class="column">
+              <img class="covers" th:src="@{/public/covers/anythinggoes.png}" alt="Anything Goes">
+            </div>
+          </div>
+        </figure>
+    </section>
+
+    <br>
+
+    <button sec:authorize="isAuthenticated()">
+        <a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>
+    <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+        <input hidden type="submit" value="Sign Out"/>
     </form>
-</fieldset>
-<br>
+    </button>
 
-</body>
+  </body>
+
 </html>
