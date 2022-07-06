@@ -17,17 +17,19 @@ public class Securing {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/outhome", "/").permitAll()
+                .antMatchers("/","/public/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                     .permitAll()
                     .loginProcessingUrl("/login")
-                    .defaultSuccessUrl("/inhome", true)
+                    .defaultSuccessUrl("/", true)
                 .and()
                     .logout()
+                    .logoutSuccessUrl("/")
                 .permitAll();
+
         return http.build();
     }
 
