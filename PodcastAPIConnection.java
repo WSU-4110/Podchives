@@ -1,4 +1,4 @@
-package com.tutorial.externalapi;
+package com.podchives.seconddraft;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
