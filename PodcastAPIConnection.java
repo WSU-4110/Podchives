@@ -8,10 +8,10 @@ import org.springframework.web.client.RestTemplate;
 public class PodcastAPIConnection {
 
     @PostMapping ("/podapi")
-    private String getPodClient() {
+    private PodcastAPIConnection getPodClient() {
         String uri = "https://api.podchaser.com/graphql";
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForObject(uri, restTemplate, String.class);
+        return restTemplate.postForObject(uri, restTemplate, PodcastAPIConnection.class);
     }
 
 }
