@@ -7,22 +7,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Controller
 public class PageViewController extends WebMvcConfigurerAdapter {
-    @RequestMapping("/outhome")
-    public String outhome() {
-        return "outhomealt.html";
-    }
-    @RequestMapping("/")
-    public String outhome2() {
-        return "outhomealt.html";
-    }
-//    @RequestMapping("/outhomealt")
-//    public String outhomealt() {
-//        return "outhomealt.html";}
 
-    @RequestMapping("/inhome")
-    public String inhome() {
-        return "inhome.html";
+    @RequestMapping("/")
+    public String home() {
+        return "home.html";
     }
+    @RequestMapping("/home")
+    public String home2() {
+        return "home.html";
+    }
+
     @RequestMapping("/profile")
     public String profile() {
         return "profile.html";
