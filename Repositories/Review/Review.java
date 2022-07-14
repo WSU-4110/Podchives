@@ -5,13 +5,15 @@ import com.example.mysqldraft3.User.User;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import java.time.Instant;
 
 @Getter
 @Setter
 @NoArgsConstructor
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
@@ -20,12 +22,13 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewId;
-    @Column
-    private String name;
-    @Column
+
+    @NonNull
     private String review;
-    @Column
-    @Size(min = 1, max = 5)
+
+    @NonNull
+    @Min(1)
+    @Max(5)
     private int rating;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -38,21 +41,4 @@ public class Review {
 
     private Instant posted;
 
-
-    public Review(String name, String review, int rating){
-        this.name = name;
-        this.review = review;
-        this.rating = rating;
-    }
-
-//
-//    public String getName(){
-//        return name;
-//    }
-//    public String getReview(){
-//        return name;
-//    }
-//    public int getRating(){
-//        return rating;
-//    }
 }
