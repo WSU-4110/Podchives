@@ -1,6 +1,6 @@
-package com.example.mysqllogindraft.Podcast;
+package com.example.mysqldraft3.Podcast;
 
-import com.example.mysqllogindraft.Review.Review;
+import com.example.mysqldraft3.Review.Review;
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,37 +10,34 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @RequiredArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "podcasts")
 public class Podcast {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long podId;
+    // Not a long or int value, manually created string will be used for url
+    private String podId;
 
-    @Column
     @NonNull
     private String title;
 
-    @Column
+    @NonNull
+    private String creator;
+
     @NonNull
     private String description;
 
-    @Column
+    @NonNull
     private String genre;
 
-    @Column
-    private String linkApple;
-    @Column
-    private String linkSpotify;
-    @Column
-    private String linkStitcher;
-    @Column
-    private String linkTuneIn;
-    @Column
-    private String linkGoogle;
+    private String link;
 
-    @JoinColumn(name = "reviewId", referencedColumnName = "reviewId")
-    @OneToMany(fetch = FetchType.EAGER)
+    private String coverImage;
+
+    private double avgRating;
+
+    @OneToMany(mappedBy = "podcastReviewed")
     private List<Review> reviews;
 }
