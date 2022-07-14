@@ -24,6 +24,9 @@ public class User {
     @Column(nullable = false, unique = true, length = 60)
     private String email;
     @NonNull
+    @Column(nullable = false, unique = true, length = 60)
+    private String username;
+    @NonNull
     @Column(nullable = false, length = 64)
     private String password;
     @NonNull
@@ -35,6 +38,5 @@ public class User {
 
     @OneToMany(mappedBy="userReviewer")
     private List<Review> userReviews;
-
 
 }
