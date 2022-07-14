@@ -11,48 +11,31 @@ import java.util.List;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @AllArgsConstructor
-//@Builder
+@Builder
 @Entity
 @Table(name = "podcasts")
 public class Podcast {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long podId; // or should it be a string id for the url?
+    // Not a long or int value, manually created string will be used for url
+    private String podId;
 
-    @Column
     @NonNull
     private String title;
 
-    @Column
     @NonNull
     private String creator;
 
-    @Column
     @NonNull
     private String description;
 
-    @Column
-    private String genre; //s??
+    @NonNull
+    private String genre;
 
-    @Column
-    private String language; //s??
+    private String link;
 
-    @Column
-    private String linkApple;
-    @Column
-    private String linkSpotify;
-    @Column
-    private String linkStitcher;
-    @Column
-    private String linkTuneIn;
-    @Column
-    private String linkGoogle;
-
-    @Column
     private String coverImage;
 
-    @Column
     private double avgRating;
 
     @OneToMany(mappedBy = "podcastReviewed")
