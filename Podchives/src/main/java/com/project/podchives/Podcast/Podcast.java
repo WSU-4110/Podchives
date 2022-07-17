@@ -1,9 +1,13 @@
-package com.example.mysqldraft3.Podcast;
+package com.project.podchives.Podcast;
 
-import com.example.mysqldraft3.Review.Review;
+import com.project.podchives.Review.Review;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
+import java.time.Instant;
 import java.util.List;
 
 @Getter
@@ -31,17 +35,28 @@ public class Podcast {
     private String creator;
 
     @NonNull
+    @Column(length = 500)
     private String description;
 
     @NonNull
     private String genre;
 
+    @NonNull
     private String link;
 
+    @NonNull
     private String coverImage;
 
-    private double avgRating;
+    @CreationTimestamp
+    private Instant added;
 
+//    @Builder.Default
+    @Column(columnDefinition = "double default 0")
+    private double avgRating = 0.0;
+
+    @JsonManagedReference
     @OneToMany(mappedBy = "podcastReviewed")
     private List<Review> reviews;
+
+
 }
