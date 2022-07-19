@@ -1,8 +1,8 @@
-package com.example.mysqldraft3.Controllers;
+package com.project.podchives.Controllers;
 
 
-import com.example.mysqldraft3.User.User;
-import com.example.mysqldraft3.User.UserRepository;
+import com.project.podchives.User.User;
+import com.project.podchives.User.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
