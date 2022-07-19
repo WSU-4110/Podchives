@@ -2,7 +2,9 @@ package com.example.mysqldraft3.Review;
 
 import com.example.mysqldraft3.Podcast.Podcast;
 import com.example.mysqldraft3.User.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
@@ -24,6 +26,7 @@ public class Review {
     private Long reviewId;
 
     @NonNull
+    @Column(length = 500)
     private String review;
 
     @NonNull
@@ -31,14 +34,19 @@ public class Review {
     @Max(5)
     private int rating;
 
+    // many reviews for one user
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId", referencedColumnName = "userId")
     private User userReviewer;
 
+    // many reviews for one podcast
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "podId", referencedColumnName = "podId")
     private Podcast podcastReviewed;
 
+    @CreationTimestamp
     private Instant posted;
 
 }
