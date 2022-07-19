@@ -1,6 +1,8 @@
-package com.project.podchives.Podcast;
+package com.example.mysqldraft3.Podcast;
 
-import com.project.podchives.Review.Review;
+import com.example.mysqldraft3.Review.Review;
+import com.example.mysqldraft3.User.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -54,9 +56,24 @@ public class Podcast {
     @Column(columnDefinition = "double default 0")
     private double avgRating = 0.0;
 
+    // one podcast has many reviews
     @JsonManagedReference
     @OneToMany(mappedBy = "podcastReviewed")
     private List<Review> reviews;
+
+    // many podcasts for one list
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "listId", referencedColumnName = "listId")
+    private PodList podcastList;
+
+
+//    five/many favorited podcasts for one list
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userId", referencedColumnName = "userId")
+    private User userFaves;
+
 
 
 }
