@@ -1,9 +1,13 @@
 package com.example.mysqldraft3.User;
 
+import com.example.mysqldraft3.Podcast.PodList;
+import com.example.mysqldraft3.Podcast.Podcast;
 import com.example.mysqldraft3.Review.Review;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Getter
@@ -36,11 +40,21 @@ public class User {
     @Column(nullable = false, length = 20)
     private String lastName;
 
+    // one user has many reviews
+    @JsonManagedReference
     @OneToMany(mappedBy="userReviewer")
     private List<Review> userReviews;
 
-//    @OneToMany(mappedBy="user")
-//    private List<PodList> userLists;
+    // FAVORITES LIST
+    @Size(max = 5)
+    @JsonManagedReference
+    @OneToMany(mappedBy="userFaves")
+    private List<Podcast> favorites;
+
+    // list of lists - one user has many lists
+    @JsonManagedReference
+    @OneToMany(mappedBy="userLister")
+    private List<PodList> userLists;
 
 // Builder Example for reference
 //    User testUser = User.builder()
