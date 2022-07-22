@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Podchives - Reviews</title>
+    <style>
+        @import url(ssheet.css);
+    </style>
+    <div class="row">
+        <h1><img class="mainlogo" src="podchives-logos/homelogo.png" alt="logo"></h1>
+
+        <nav>
+            <ul>
+                <li><a href="trending.html" target="_blank">TRENDING</a></li>
+                <li><a href="browse.html" target="_blank">BROWSE</a></li>
+                <li><a href="discover.html" target="_blank">DISCOVER</a></li>
+
+                <li><a href="https://google.com/search" id="button" class="button"><img class ="icons" src="magnifying-glass.png" alt="logo"></a></li>
+
+                <li><a href="profile.html" target="blank"><img class ="icons" src="icon.png" alt="logo"></a></li>
+            </ul>
+        </nav>
+        </head>
+    </div>
+
+
+<body>
+<div align="center">
+<h1>Reviews from other users</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Podcast Name</th>
+        <th>Review</th>
+        <th>Rating/10</th>
+    </tr>
+    </thead>
+    <tr th:each="userReview: ${review}">
+        <td th:text="${userReview.name}" />
+        <td th:text="${userReview.review}" />
+        <td th:text="${userReview.rating}" />
+    </tr>
+
+</table>
+</div>
+<div align="center">
+    <form action= "review" method="get">
+        <table border="1" cellpadding="5">
+            <caption>
+                <h2>
+                    Add a review
+                </h2>
+            </caption>
+
+            <tr>
+                <th>Podcast Name: </th>
+                <td>
+                    <input type="text" name="name" size="45"
+                           value="Enter Name"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <th>Type Review: </th>
+                <td>
+                    <input type="textarea" name="review" size="45"
+                           value="Type Review"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <th>Your rating: </th>
+                <td>
+                    <input type="number" name="rating" size="5"
+                           value="Enter rating out of 10"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Save" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
