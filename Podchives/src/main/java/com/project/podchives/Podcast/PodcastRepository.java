@@ -1,7 +1,7 @@
-package com.example.mysqldraft3.Podcast;
+package com.project.podchives.Podcast;
 
-import com.example.mysqldraft3.Review.Review;
-import com.example.mysqldraft3.User.User;
+import com.project.podchives.Review.Review;
+import com.project.podchives.User.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
