@@ -1,8 +1,8 @@
-package com.example.mysqldraft3.Controllers;
+package com.project.podchives.Controllers;
 
-import com.example.mysqldraft3.Podcast.Podcast;
-import com.example.mysqldraft3.Podcast.PodcastRepository;
-import com.example.mysqldraft3.User.User;
+import com.project.podchives.Podcast.Podcast;
+import com.project.podchives.Podcast.PodcastRepository;
+import com.project.podchives.User.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
